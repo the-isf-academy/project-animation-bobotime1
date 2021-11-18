@@ -1,8 +1,10 @@
 from turtle import *
 
 def apple(size):
-
-    for i in range(9):
+    pensize(10)
+    color("black")
+    begin_fill()
+    for i in range(10):
             if i == 0:
                 forward(size/5)
                 right(10)
@@ -36,43 +38,56 @@ def apple(size):
                 right(5)
                 forward(size/10)
                 right(10)
-                forward(size/5)
+                forward(size/10)
                 right(10)
-                forward(5)
+                forward(size/10)
                 left(10)
-                forward(5)
+                forward(size/10)
                 right(5)
             if i == 5:
-                forward(10)
+                forward(size/5)
                 right(45)
-                forward(5)
+                forward(size/10)
                 right(15)
             if i == 6:
-                forward(15)
+                forward(size/(10/3))
                 right(10)
-                forward(15)
+                forward(size/(10/3))
                 right(5)
-                forward(15)
+                forward(size/(10/3))
                 right(5)
             if i == 7:
-                forward(5)
+                forward(size/10)
                 right(30)
-                forward(5)
+                forward(size/10)
                 right(15)
-                forward(5)
+                forward(size/10)
                 right(15)
-                forward(5)
+                forward(size/10)
                 right(15)
             if i == 8:
-                forward(10)
+                forward(size/5)
                 right(11)
-                forward(9)
+                forward(size/(50/9))
                 left(85)
-                forward(20)
+                forward(size/15)
+                color("red")
+                end_fill()
+                color("brown")
+
+            if i == 9:
+                forward(size/(5/2))
+                right(70)
+                forward(size/10)
+                color("red")
+                end_fill()
+
+def knife(size):
+    pensize(5)
+    color("black")
+    begin_fill()
 
 
-
-apple(50)
 
 
 
