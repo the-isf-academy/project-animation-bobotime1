@@ -77,19 +77,49 @@ def apple(size):
 
             if i == 9:
                 forward(size/(5/2))
-                right(70)
-                forward(size/10)
                 color("red")
                 end_fill()
 
 def knife(size):
-    pensize(5)
-    color("black")
-    begin_fill()
+    right(180)
+    forward(size/(25/4))
+    left(90)
+    forward(size/(5/4))
+    right(90)
+    forward(size/(5/3))
+    left(170)
+    forward(size/(5/3))
+    right(75)
+    forward(size*2)
+
+    right(180)
+    forward(size*2)
+    left(75)
+    forward(size/(5/3))
+    right(170)
+    forward(size/(5/3))
+    left(90)
+    forward(size/(5/4))
+    right(90)
+    forward(size/(25/4))
+
+    forward(size/(25/4))
+    right(90)
+    forward(size/(5/4))
+    right(90)
+    forward(size/(25/8))
+    left(180)
+    forward(size/(25/8))
+    forward(size/(5/3))
+    right(170)
+    forward(size/(5/3))
+    right(10)
+    forward(size/(25/8))
+    right(180)
+    forward(size/(25/8))
+    right(95)
+    forward(size*2)
 
 
-
-
-
-
+knife(50)
 input()
