@@ -1,10 +1,11 @@
 from turtle import *
-
+from helpers import restore_state_when_finished
 def apple(size):
     pensize(10)
     color("black")
     begin_fill()
-    for i in range(10):
+    with restore_state_when_finished():
+        for i in range(10):
             if i == 0:
                 forward(size/5)
                 right(10)
@@ -74,53 +75,69 @@ def apple(size):
                 color("red")
                 end_fill()
                 color("brown")
-
             if i == 9:
                 forward(size/(5/2))
                 color("red")
                 end_fill()
+                left(5)
 
 def knife(size):
     pensize("5")
     color("black")
     begin_fill()
-    for i in range(3):
-        if i == 0:
-            forward(size/(25/8))
-            left(90)
-            forward(size/(5/4))
-            left(90)
-            forward(size/(25/8))
-            left(90)
-            forward(size/(5/4))
-            color("forestgreen")
-            end_fill()
-            color("black")
-        if i == 1:
-            right(180)
-            forward(size/(5/4))
-            begin_fill()
-            left(90)
-            forward(size/(5/3))
-            right(170)
-            forward(size/(5/3))
-            right(10)
-            forward(size/(25/8))
-            right(10)
-            forward(size/(5/3))
-            right(170)
-            forward(size/(5/3))
-            end_fill()
-        if i == 2:
-            right(180)
-            forward(size/(5/3))
-            left(170)
-            forward(size/(5/3))
-            right(75)
-            begin_fill()
-            forward(size*2)
-            left(170.75)
-            forward(size*2)
-            color("silver")
-            end_fill()
+    with restore_state_when_finished():
+        for i in range(3):
+            if i == 0:
+                forward(size/(25/8))
+                left(90)
+                forward(size/(5/4))
+                left(90)
+                forward(size/(25/8))
+                left(90)
+                forward(size/(5/4))
+                color("forestgreen")
+                end_fill()
+                color("black")
+            if i == 1:
+                right(180)
+                forward(size/(5/4))
+                begin_fill()
+                left(90)
+                forward(size/(5/3))
+                right(170)
+                forward(size/(5/3))
+                right(10)
+                forward(size/(25/8))
+                right(10)
+                forward(size/(5/3))
+                right(170)
+                forward(size/(5/3))
+                end_fill()
+            if i == 2:
+                right(180)
+                forward(size/(5/3))
+                left(170)
+                forward(size/(5/3))
+                right(75)
+                begin_fill()
+                forward(size*2)
+                left(170.75)
+                forward(size*2)
+                color("silver")
+                end_fill()
+
+def background(color):
+    with restore_state_when_finished():
+        penup()
+        goto(-400, 400)
+        pendown()
+        begin_fill()
+        for i in range(4):
+            forward(800)
+            right(90)
+
+        color(color)
+        end_fill()
+        input()
+apple(50)
 input()
