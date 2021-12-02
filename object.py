@@ -126,18 +126,4 @@ def knife(size):
                 color("silver")
                 end_fill()
 
-def background(color):
-    with restore_state_when_finished():
-        penup()
-        goto(-400, 400)
-        pendown()
-        begin_fill()
-        for i in range(4):
-            forward(800)
-            right(90)
-
-        color(color)
-        end_fill()
-        input()
-apple(50)
 input()

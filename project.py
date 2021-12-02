@@ -3,17 +3,22 @@ import settings
 import time
 from object import apple, knife
 from helpers import fly, no_delay, restore_state_when_finished
+from background import sky_background
 
 def draw_animation(num_frames, sleeptime):
+    sky_background()
     j = -300
+    w = 0
     speed(100)
-    fly(0, -300)
     hideturtle()
+    fly(0, -300)
+    #hideturtle()
     with no_delay():
         for i in range(num_frames):
             if i <= 40:
                 left(10)
                 apple(100)
+                sky_background()
                 j = j + 8
                 fly(0, j)
                 screen.update()
