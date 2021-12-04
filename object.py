@@ -126,4 +126,13 @@ def knife(size):
                 color("silver")
                 end_fill()
 
+def knife_in_apple(size):
+    knife(size/2)
+    left(90)
+    color("black")
+    forward(40)
+    forward(100)
+    left(170.75)
+    forward(100)
+knife_in_apple(100)
 input()
