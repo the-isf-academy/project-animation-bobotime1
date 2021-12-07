@@ -1,93 +1,74 @@
 from turtle import *
-from helpers import restore_state_when_finished
+from helpers import restore_state_when_finished, fly
 def apple(size):
     pensize(10)
     color("black")
     begin_fill()
+    x = 5
     with restore_state_when_finished():
-        for i in range(10):
-            if i == 0:
-                forward(size/5)
-                right(10)
-                forward(size/5)
-                right(5)
-                forward(size/5)
-                right(15)
-            if i == 1:
-                forward(size/10)
-                right(15)
-                forward(size/10)
-                right(15)
-                forward(size/10)
-                right(30)
-                forward(size/10)
-                right(5)
-            if i == 2:
-                forward(size/(10/3))
-                right(5)
-                forward(size/(10/3))
-                right(10)
-                forward(size/(10/3))
-                right(15)
-            if i == 3:
-                forward(size/10)
-                right(45)
-                forward(size/5)
-                right(5)
-            if i == 4:
-                forward(size/5)
-                right(5)
-                forward(size/10)
-                right(10)
-                forward(size/10)
-                right(10)
-                forward(size/10)
-                left(10)
-                forward(size/10)
-                right(5)
-            if i == 5:
-                forward(size/5)
-                right(45)
-                forward(size/10)
-                right(15)
-            if i == 6:
-                forward(size/(10/3))
-                right(10)
-                forward(size/(10/3))
-                right(5)
-                forward(size/(10/3))
-                right(5)
-            if i == 7:
-                forward(size/10)
-                right(30)
-                forward(size/10)
-                right(15)
-                forward(size/10)
-                right(15)
-                forward(size/10)
-                right(15)
-            if i == 8:
-                forward(size/5)
-                right(11)
-                forward(size/(50/9))
-                left(85)
-                forward(size/15)
-                color("red")
-                end_fill()
-                color("brown")
-            if i == 9:
-                forward(size/(5/2))
-                color("red")
-                end_fill()
-                left(5)
+        forward(size/5)
+        right(10)
+        forward(size/5)
+        right(5)
+        forward(size/5)
+        right(15)
+        for i in range(2):
+            forward(size/10)
+            right(15)
+        forward(size/10)
+        right(30)
+        forward(size/10)
+        right(5)
+        for i in range(3):
+            forward(size/(10/3))
+            right(x)
+            x = x + 5
+        forward(size/10)
+        right(45)
+        forward(size/5)
+        right(5)
+        forward(size/5)
+        right(5)
+        for i in range(2):
+            forward(size/10)
+            right(10)
+        forward(size/10)
+        left(10)
+        forward(size/10)
+        right(5)
+        forward(size/5)
+        right(45)
+        forward(size/10)
+        right(15)
+        forward(size/(10/3))
+        right(10)
+        for i in range(2):
+            forward(size/(10/3))
+            right(5)
+        forward(size/10)
+        right(30)
+        for i in range(3):
+        forward(size/10)
+        right(15)
+        forward(size/5)
+        right(11)
+        forward(size/(50/9))
+        left(85)
+        forward(size/15)
+        color("red")
+        end_fill()
+        color("brown")
+        forward(size/(5/2))
+        color("red")
+        end_fill()
+        left(5)
+        "Draws an apple that is filled with color"
 
 def knife(size):
     pensize("5")
     color("black")
     begin_fill()
     with restore_state_when_finished():
-        for i in range(3):
-            if i == 0:
                 forward(size/(25/8))
                 left(90)
                 forward(size/(5/4))
@@ -98,7 +79,7 @@ def knife(size):
                 color("forestgreen")
                 end_fill()
                 color("black")
-            if i == 1:
+                "This part of the code function and fills the grip of the dagger to green and changes the color back to black for the outline."
                 right(180)
                 forward(size/(5/4))
                 begin_fill()
@@ -113,7 +94,7 @@ def knife(size):
                 right(170)
                 forward(size/(5/3))
                 end_fill()
-            if i == 2:
+                "This part of the function draws and fills the guard of the dagger."
                 right(180)
                 forward(size/(5/3))
                 left(170)
@@ -125,14 +106,14 @@ def knife(size):
                 forward(size*2)
                 color("silver")
                 end_fill()
+                "This part of the function draws and fills the blade of the dagger."
 
-def knife_in_apple(size):
+def knife_in_apple(v, m, size):
+    fly(v, 108)
+    setheading(90)
     knife(size/2)
-    left(90)
-    color("black")
-    forward(40)
-    forward(100)
-    left(170.75)
-    forward(100)
-knife_in_apple(100)
-input()
+    "Moves turtle to a coordinate before drawing the knife in the correct direction."
+    setheading(130)
+    fly(m, 108)
+    apple(size)
+    "Moves turtle to a coordinate before drawing the apple in the correct direction. The apple overlaps the knife and draws it over the knife, creating the illusion that the knife is in the apple."
