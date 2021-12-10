@@ -48,8 +48,8 @@ def apple(size):
         forward(size/10)
         right(30)
         for i in range(3):
-        forward(size/10)
-        right(15)
+            forward(size/10)
+            right(15)
         forward(size/5)
         right(11)
         forward(size/(50/9))
@@ -58,11 +58,11 @@ def apple(size):
         color("red")
         end_fill()
         color("brown")
+
         forward(size/(5/2))
         color("red")
         end_fill()
         left(5)
-        "Draws an apple that is filled with color"
 
 def knife(size):
     pensize("5")
